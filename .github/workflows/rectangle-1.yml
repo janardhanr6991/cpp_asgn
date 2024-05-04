@@ -1,9 +1,9 @@
-name: rectangle
+name: rectangle-1
 
 on:
   pull_request:
     paths:
-      - 'basics/tasks/rectangle/**'
+      - 'basics/tasks/rectangle-1/**'
     branches:
       - main
 
@@ -20,13 +20,13 @@ jobs:
         
       - name: Configure and build
         run: |
-          cd basics/tasks/rectangle
+          cd basics/tasks/rectangle-1
           cmake -S . -B build
           cmake --build build
           
       - name: Run tests
         run: |
-          cd basics/tasks/rectangle/build
+          cd basics/tasks/rectangle-1/build
           ./solution_test
 
       - name: Get diff
@@ -34,7 +34,7 @@ jobs:
 
       - name: Fail if solution_test.cpp is modified
         run: |
-          if echo $GIT_DIFF | fgrep 'rectangle/solution_test'; then
+          if echo $GIT_DIFF | fgrep 'rectangle-1/solution_test'; then
             exit 1
           else
             echo "OK"
