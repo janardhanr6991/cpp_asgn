@@ -1,4 +1,4 @@
-name: hello-world
+name: factorial
 
 on:
   pull_request:
@@ -32,7 +32,7 @@ jobs:
       - name: Check if loops are used
         run: |
           cd basics/tasks/factorial
-          if cat include/solution.h | fgrep 'for' 'while'; then
+          if cat include/solution.h | fgrep -e 'for' -e 'while'; then
             echo "for and while loops are not allowed" && exit 1
           else
             echo "OK"
