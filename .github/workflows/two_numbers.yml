@@ -1,0 +1,42 @@
+name: hello-world
+
+on:
+  pull_request:
+    paths:
+      - 'basics/tasks/two-numbers/**'
+    branches:
+      - main
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+        
+      - name: Install CMake
+        run: sudo apt-get update && sudo apt-get install -y cmake libgtest-dev
+        
+      - name: Configure and build
+        run: |
+          cd basics/tasks/two-numbers
+          cmake -S . -B build
+          cmake --build build
+          
+      - name: Run tests
+        run: |
+          cd basics/tasks/two-numbers/build
+          ./solution_test
+
+      - name: Get diff
+        uses: technote-space/get-diff-action@v6
+
+      - name: Fail if solution_test.cpp is modified
+        run: |
+          if echo $GIT_DIFF | fgrep 'solution_test'; then
+            exit 1
+          else
+            echo "OK"
+          fi
+
