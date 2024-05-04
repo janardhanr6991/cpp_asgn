@@ -1,0 +1,51 @@
+name: hello-world
+
+on:
+  pull_request:
+    paths:
+      - 'basics/tasks/factorial/**'
+    branches:
+      - main
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+        
+      - name: Install CMake
+        run: sudo apt-get update && sudo apt-get install -y cmake libgtest-dev
+        
+      - name: Configure and build
+        run: |
+          cd basics/tasks/factorial
+          cmake -S . -B build
+          cmake --build build
+          
+      - name: Run tests
+        run: |
+          cd basics/tasks/factorial/build
+          ./solution_test
+
+      - name: Check if loops are used
+        run: |
+          cd basics/tasks/factorial
+          if cat include/solution.h | fgrep 'for' 'while'; then
+            echo "for and while loops are not allowed" && exit 1
+          else
+            echo "OK"
+          fi
+
+      - name: Get diff
+        uses: technote-space/get-diff-action@v6
+
+      - name: Fail if solution_test.cpp is modified
+        run: |
+          if echo $GIT_DIFF | fgrep 'factorial/solution_test'; then
+            exit 1
+          else
+            echo "OK"
+          fi
+

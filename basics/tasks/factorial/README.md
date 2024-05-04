@@ -1,28 +1,27 @@
-# Assignment 2: Variables, Data Types, and Operators
+# Assignment 4: Functions and Recursion
 
 ## Objective
-The objective of this assignment is to practice declaring variables, using different data types, and applying basic arithmetic operators in C++.
+The objective of this assignment is to understand and implement functions and recursion in C++.
 
 ## Task
-Write a program that prompts the user to enter two numbers and then calculates and displays the sum, difference, product, and quotient of these two numbers. The output of the program should clearly show the results of these calculations.
+Write a recursive function to calculate the factorial of a number and a main function to test this recursive function.
+
+On invalid input your function should return -1. For and while loops are not allowed
+
+*Note*: Here you are not allowed to use `std::cin` or `std::cout` - main.cpp file already uses them to be able to interact with your solution. 
 
 Example Output:
 
-
 ```
-Enter the first number: 5
-Enter the second number: 3
-Sum: 8
-Difference: 2
-Product: 15
-Quotient: 1.66667
+Enter a number: 5
+Factorial of 5 is 120
 ```
 
 Guidance:
 
-Use appropriate data types for storing numbers. Consider edge cases (like division by zero).
-Utilize std::cin for input and std::cout for output.
-Ensure your program handles user input gracefully and displays a clear output.
+Define a recursive function int factorial(int n) that returns the factorial of n.
+Ensure the function handles corner cases properly (e.g., the factorial of 1 and others...).
+
 
 ## Checking solution
 1. Set up your C++ development environment if you haven’t already.

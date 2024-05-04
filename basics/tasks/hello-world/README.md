@@ -11,7 +11,7 @@ Hello, World!
 Your_Name
 ```
 
-## Instructions
+## Checking solution
 1. Set up your C++ development environment if you haven’t already.
 2. Modify file `include/hello_world.h` and function in it.
 2. Use `std::cout` and std::cin for printing output to the console.
