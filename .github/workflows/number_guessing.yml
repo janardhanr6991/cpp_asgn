@@ -3,7 +3,7 @@ name: hello-world
 on:
   pull_request:
     paths:
-      - 'basics/tasks/two-numbers/**'
+      - 'basics/tasks/number-guessing/**'
     branches:
       - main
 
@@ -20,13 +20,13 @@ jobs:
         
       - name: Configure and build
         run: |
-          cd basics/tasks/two-numbers
+          cd basics/tasks/number-guessing
           cmake -S . -B build
           cmake --build build
           
       - name: Run tests
         run: |
-          cd basics/tasks/two-numbers/build
+          cd basics/tasks/number-guessing/build
           ./solution_test
 
       - name: Get diff
@@ -34,7 +34,7 @@ jobs:
 
       - name: Fail if solution_test.cpp is modified
         run: |
-          if echo $GIT_DIFF | fgrep 'two-numbers/solution_test'; then
+          if echo $GIT_DIFF | fgrep 'number-guessing/solution_test'; then
             exit 1
           else
             echo "OK"
