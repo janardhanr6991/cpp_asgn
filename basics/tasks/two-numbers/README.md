@@ -6,7 +6,7 @@ The objective of this assignment is to practice declaring variables, using diffe
 ## Task
 Write a program that prompts the user to enter two numbers and then calculates and displays the sum, difference, product, and quotient of these two numbers. The output of the program should clearly show the results of these calculations.
 
-Example Output:
+### Example Output:
 
 
 ```
@@ -18,7 +18,7 @@ Product: 15
 Quotient: 1.66667
 ```
 
-Guidance:
+### Guidance:
 
 Use appropriate data types for storing numbers. Consider edge cases (like division by zero).
 Utilize std::cin for input and std::cout for output.

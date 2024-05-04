@@ -10,20 +10,20 @@ On invalid input your function should return -1. For and while loops are not all
 
 *Note*: Here you are not allowed to use `std::cin` or `std::cout` - main.cpp file already uses them to be able to interact with your solution. 
 
-Example Output:
+### Example Output:
 
 ```
 Enter a number: 5
 Factorial of 5 is 120
 ```
 
-Guidance:
+### Guidance:
 
 Define a recursive function int factorial(int n) that returns the factorial of n.
 Ensure the function handles corner cases properly (e.g., the factorial of 1 and others...).
 
 
-## Checking solution
+## Instructions
 1. Set up your C++ development environment if you haven’t already.
 2. Modify file `include/solution.h` and function in it.
 3. Compile and run your program to ensure it works correctly:
