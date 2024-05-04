@@ -34,8 +34,8 @@ Optionally, use a for loop to limit the number of guesses to 10.
 ## Checking solution
 1. Set up your C++ development environment if you haven’t already.
 2. Modify file `include/solution.h` and function in it.
-2. Use `std::cout` and std::cin for printing output to the console.
-3. Compile and run your program to ensure it works correctly:
+3. Use `std::cout` and std::cin for printing output to the console.
+4. Compile and run your program to ensure it works correctly:
 ```shell
 cmake -S . -B build
 cmake --build build

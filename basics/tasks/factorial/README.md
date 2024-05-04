@@ -26,7 +26,6 @@ Ensure the function handles corner cases properly (e.g., the factorial of 1 and 
 ## Checking solution
 1. Set up your C++ development environment if you haven’t already.
 2. Modify file `include/solution.h` and function in it.
-2. Use `std::cout` and std::cin for printing output to the console.
 3. Compile and run your program to ensure it works correctly:
 ```shell
 cmake -S . -B build
