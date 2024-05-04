@@ -31,7 +31,6 @@ To run the tests, follow these steps:
 ```shell
 cmake -S . -B build
 cmake --build build
-cd build
 ./build/hello_test
 ```
 4. The tests should run, and you should see the output indicating whether they passed or failed.

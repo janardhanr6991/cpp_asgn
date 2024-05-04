@@ -1,7 +1,7 @@
 name: hello-world
 
 on:
-  push:
+  pull_request:
     paths:
       - 'basics/tasks/hello-world/**'
     branches:
@@ -15,19 +15,28 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v2
         
-      - name: Set up CMake
-        uses: martinlindhe/cmake-action@v2
-        
-      - name: Install dependencies
+      - name: Install CMake
         run: sudo apt-get update && sudo apt-get install -y cmake libgtest-dev
         
       - name: Configure and build
         run: |
+          cd basics/tasks/hello-world
           cmake -S . -B build
           cmake --build build
           
       - name: Run tests
         run: |
-          cd build
+          cd basics/tasks/hello-world/build
           ./hello_test
+
+      - name: Get diff
+        uses: technote-space/get-diff-action@v6
+
+      - name: Fail if hello_world_test.cpp is modified
+        run: |
+          if echo $GIT_DIFF | fgrep 'hello_world_test'; then
+            exit 1
+          else
+            echo "OK"
+          fi
 
