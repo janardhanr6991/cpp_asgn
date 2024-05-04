@@ -1,6 +1,7 @@
+#include <solution.h>
+
 #include <gtest/gtest.h>
 #include <sstream>
-#include <solution.h>
 
 class SolutionTest : public ::testing::Test {
 protected:
@@ -52,5 +53,45 @@ TEST_F(SolutionTest, HandlesInvalidInput) {
 
     solution();
     std::string expected_output = "Enter the first number: Invalid input. Please enter a valid number.\n";
+    EXPECT_EQ(ss.str(), expected_output);
+}
+
+TEST_F(SolutionTest, QuotientRegularDivision) {
+    std::string input_data = "20\n4\n";
+    std::istringstream input_stream(input_data);
+    redirectCinFromStream(input_stream);
+
+    solution();
+    std::string expected_output = "Enter the first number: Enter the second number: Sum: 24\nDifference: 16\nProduct: 80\nQuotient: 5\n";
+    EXPECT_EQ(ss.str(), expected_output);
+}
+
+TEST_F(SolutionTest, QuotientFloatingPointResult) {
+    std::string input_data = "10\n4\n";
+    std::istringstream input_stream(input_data);
+    redirectCinFromStream(input_stream);
+
+    solution();
+    std::string expected_output = "Enter the first number: Enter the second number: Sum: 14\nDifference: 6\nProduct: 40\nQuotient: 2.5\n";
+    EXPECT_EQ(ss.str(), expected_output);
+}
+
+TEST_F(SolutionTest, QuotientNegativeDivision) {
+    std::string input_data = "10\n-2\n";
+    std::istringstream input_stream(input_data);
+    redirectCinFromStream(input_stream);
+
+    solution();
+    std::string expected_output = "Enter the first number: Enter the second number: Sum: 8\nDifference: 12\nProduct: -20\nQuotient: -5\n";
+    EXPECT_EQ(ss.str(), expected_output);
+}
+
+TEST_F(SolutionTest, QuotientWithDecimalNumbers) {
+    std::string input_data = "5.5\n1.1\n";
+    std::istringstream input_stream(input_data);
+    redirectCinFromStream(input_stream);
+
+    solution();
+    std::string expected_output = "Enter the first number: Enter the second number: Sum: 6.6\nDifference: 4.4\nProduct: 6.05\nQuotient: 5\n";
     EXPECT_EQ(ss.str(), expected_output);
 }
