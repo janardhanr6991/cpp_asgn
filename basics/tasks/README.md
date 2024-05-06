@@ -40,6 +40,6 @@ To prepare for this assignment please go through the following sections:
 1. [Inheritance](https://cplusplus.com/doc/tutorial/inheritance/)
 2. [Polymorphism](https://cplusplus.com/doc/tutorial/polymorphism/)
 
-# Assignment 7: Exploring STL Containers - vector, map, unordered_map, set
+# [Assignment 8: Exploring STL Containers - vector, map, unordered_map, set](https://github.com/Gamezar/cpp-training/tree/main/basics/tasks/containers)
 
 For this assignment you will need to refer to [cppreference](https://en.cppreference.com/w/)
