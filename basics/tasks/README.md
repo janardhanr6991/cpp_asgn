@@ -22,3 +22,7 @@ To prepare for this assignment please go through the following sections:
 
 To prepare for this assignment please go through the following sections:
 1. [Functions](https://cplusplus.com/doc/tutorial/functions/)
+
+# [Assignment 5: Introduction to OOP (Classes and Objects)](https://github.com/Gamezar/cpp-training/tree/main/basics/tasks/rectangle-1)
+
+1. [Classes 1](https://cplusplus.com/doc/tutorial/classes/)
