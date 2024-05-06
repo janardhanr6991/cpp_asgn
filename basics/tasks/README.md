@@ -39,3 +39,7 @@ To prepare for this assignment please go through the following sections:
 To prepare for this assignment please go through the following sections:
 1. [Inheritance](https://cplusplus.com/doc/tutorial/inheritance/)
 2. [Polymorphism](https://cplusplus.com/doc/tutorial/polymorphism/)
+
+# Assignment 7: Exploring STL Containers - vector, map, unordered_map, set
+
+For this assignment you will need to refer to [cppreference](https://en.cppreference.com/w/)
