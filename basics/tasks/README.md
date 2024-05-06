@@ -13,7 +13,7 @@ To prepare for this assignment please go through the following sections:
 1. Explore if statements in [Control structures](https://cplusplus.com/doc/tutorial/control/)
 2. Refresh [Variables and types](https://cplusplus.com/doc/tutorial/variables/)
 
-# [Assignment 3: Variables, Data Types, and Operators](https://github.com/Gamezar/cpp-training/tree/main/basics/tasks/two-numbers)
+# [Assignment 3: Control structures](https://github.com/Gamezar/cpp-training/tree/main/basics/tasks/number-guessing)
 
 To prepare for this assignment please go through the following sections:
 1. Explore the rest of [Control structures](https://cplusplus.com/doc/tutorial/control/)
