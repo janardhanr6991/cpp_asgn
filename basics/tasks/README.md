@@ -25,4 +25,17 @@ To prepare for this assignment please go through the following sections:
 
 # [Assignment 5: Introduction to OOP (Classes and Objects)](https://github.com/Gamezar/cpp-training/tree/main/basics/tasks/rectangle-1)
 
-1. [Classes 1](https://cplusplus.com/doc/tutorial/classes/)
+To prepare for this assignment please go through the following sections:
+1. [Classes 1](https://cplusplus.com/doc/tutorial/classes/) untill Constructors section
+
+# [Assignment 6: Constructors, Destructors, and Access Specifiers](https://github.com/Gamezar/cpp-training/tree/main/basics/tasks/rectangle-2)
+
+To prepare for this assignment please go through the following sections:
+1. Rest of [Classes 1](https://cplusplus.com/doc/tutorial/classes/)
+2. Destructors in [Classes 2](https://cplusplus.com/doc/tutorial/templates/)
+
+# [Assignment 7: Inheritance in C++](https://github.com/Gamezar/cpp-training/tree/main/basics/tasks/polygon)
+
+To prepare for this assignment please go through the following sections:
+1. [Inheritance](https://cplusplus.com/doc/tutorial/inheritance/)
+2. [Polymorphism](https://cplusplus.com/doc/tutorial/polymorphism/)
