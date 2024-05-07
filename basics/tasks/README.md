@@ -1,4 +1,4 @@
-# [Assignment 1: Introduction to C++ and its Syntax](basics/tasks/hello-world)
+# [Assignment 1: Introduction to C++ and its Syntax](https://github.com/Gamezar/cpp-training/tree/main/basics/tasks/hello-world)
 
 To prepare for this assignment please go through the following sections:
 1. [Compilers](https://cplusplus.com/doc/tutorial/introduction/)
