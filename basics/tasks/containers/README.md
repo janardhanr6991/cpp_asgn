@@ -1,4 +1,4 @@
-# Assignment 7: Exploring STL Containers - vector, map, unordered_map, set
+# Assignment 8: Exploring STL Containers - vector, map, unordered_map, set
 
 ## Objective
 The objective of this assignment is to explore basic C++ containers.
