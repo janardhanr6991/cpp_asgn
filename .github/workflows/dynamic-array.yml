@@ -31,7 +31,7 @@ jobs:
 
       - name: Check if smart pointers are used
         run: |
-          cd basics/tasks/factorial
+          cd pointers/tasks/dynamic-array
           if cat include/solution.h | fgrep -e 'unique_ptr' -e 'shared_ptr'; then
             echo "smart pointers are not allowed" && exit 1
           else

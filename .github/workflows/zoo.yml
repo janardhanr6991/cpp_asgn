@@ -1,9 +1,9 @@
-name: simple-vector
+name: zoo
 
 on:
   pull_request:
     paths:
-      - 'pointers/tasks/simple-vector/**'
+      - 'pointers/tasks/zoo/**'
     branches:
       - main
 
@@ -20,29 +20,20 @@ jobs:
         
       - name: Configure and build
         run: |
-          cd pointers/tasks/simple-vector
+          cd pointers/tasks/zoo
           cmake -S . -B build
           cmake --build build
           
       - name: Run tests
         run: |
-          cd pointers/tasks/simple-vector/build
+          cd pointers/tasks/zoo/build
           ./solution_test
 
-      - name: Check if smart pointers are used
+      - name: Check if cout is used
         run: |
-          cd pointers/tasks/simple-vector
-          if cat solution.h | fgrep -e 'unique_ptr' -e 'shared_ptr'; then
-            echo "smart pointers are not allowed" && exit 1
-          else
-            echo "OK"
-          fi
-
-      - name: Check if std::vector is used
-        run: |
-          cd pointers/tasks/simple-vector
-          if cat solution.h | fgrep -e 'vector'; then
-            echo "std::vector not allowed" && exit 1
+          cd pointers/tasks/zoo
+          if cat solution.h | fgrep -e 'cout'; then
+            echo "std::cout is not allowed in Zoo class" && exit 1
           else
             echo "OK"
           fi
@@ -52,7 +43,7 @@ jobs:
 
       - name: Fail if solution_test.cpp is modified
         run: |
-          if echo $GIT_DIFF | fgrep 'simple-vector/solution_test'; then
+          if echo $GIT_DIFF | fgrep 'zoo/solution_test'; then
             exit 1
           else
             echo "OK"
