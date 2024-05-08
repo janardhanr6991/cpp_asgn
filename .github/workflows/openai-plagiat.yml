@@ -1,0 +1,61 @@
+name: Plagiarism Check
+
+on:
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  check-plagiarism:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout the base repository
+      uses: actions/checkout@v2
+
+    - name: Checkout the plagiarism check tool
+      uses: actions/checkout@v2
+      with:
+        repository: 'Gamezar/openai-plagiat-score'
+        path: 'openai-plagiat-score'
+        ref: 'main'
+
+    - name: Install plagiarism check tool dependencies
+      run: |
+        cd openai-plagiat-score
+        chmod +x install.sh
+        ./install.sh
+
+    - name: List all changed files
+      id: files
+      run: |
+        echo "files=$(git diff --name-only ${{ github.event.before }} ${{ github.event.after }})" >> $GITHUB_ENV
+
+    - name: Run plagiarism check on all changed files
+      id: plagiarism_check
+      run: |
+        cd openai-plagiat-score
+        output=""
+        for file in ${{ env.files }}
+        do
+          result=$(python main.py "$file")
+          output+="$file: $result\n"
+        done
+        echo "::set-output name=result::$output"
+
+    - name: Post results as a comment
+      uses: actions/github-script@v5
+      with:
+        github-token: ${{ secrets.GITHUB_TOKEN }}
+        script: |
+          const output = `${{ steps.plagiarism_check.outputs.result }}`;
+          const issue_number = context.issue.number;
+          github.issues.createComment({
+            issue_number: issue_number,
+            owner: context.repo.owner,
+            repo: context.repo.repo,
+            body: output
+          });
+
+    - name: Finalize check
+      run: echo "Plagiarism check completed successfully."
