@@ -54,9 +54,7 @@ jobs:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         comment: |
           **ChatGPT Check Results:**
-          ```
           ${{ steps.plagiarism_check.outputs.result }}
-          ```
     
     - name: Finalize check
       run: echo "Plagiarism check completed successfully."
