@@ -28,10 +28,13 @@ jobs:
         chmod +x install.sh
         ./install.sh
 
+    - name: Get diff
+      uses: technote-space/get-diff-action@v6
+
     - name: List all changed files
       id: files
       run: |
-        echo "files=$(git diff --name-only ${{ github.event.before }} ${{ github.event.after }})" >> $GITHUB_ENV
+        echo "files=$GIT_DIFF" >> $GITHUB_ENV
 
     - name: Run plagiarism check on all changed files
       id: plagiarism_check
