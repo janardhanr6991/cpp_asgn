@@ -48,6 +48,7 @@ jobs:
     - name: Post comment
       uses: KeisukeYamashita/create-comment@v1
       with:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         comment: |
           Issue title must start with 'ABC-'.
           Auto-closing this issue.
