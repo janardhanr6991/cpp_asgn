@@ -43,19 +43,13 @@ jobs:
         done
         echo "::set-output name=result::$output"
 
-    - name: Post results as a comment
-      uses: actions/github-script@v5
+    - name: Post comment
+      uses: KeisukeYamashita/create-comment@v1
       with:
-        github-token: ${{ secrets.GITHUB_TOKEN }}
-        script: |
-          const output = `${{ steps.plagiarism_check.outputs.result }}`;
-          const issue_number = context.issue.number;
-          github.issues.createComment({
-            issue_number: issue_number,
-            owner: context.repo.owner,
-            repo: context.repo.repo,
-            body: output
-          });
+        comment: |
+          **Plagiarism Check Results:**
+          ```
+          ${{ steps.plagiarism_check.outputs.result }}
 
     - name: Finalize check
       run: echo "Plagiarism check completed successfully."
