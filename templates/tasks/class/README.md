@@ -1,17 +1,17 @@
-# Assignment 1: Function Template
+# Assignment 2: Class Template
 
 ## Objective
-The objective of this assignment is to discover what templates are and get experience with templating functions.
+The objective of this assignment is to get try templating simple class.
 
 ## Task
-Write a template function named `Max` that accepts two arguments of the same type and returns the greater of the two.
+Create a class template named `Holder` that stores a single value and provides access to the value with a getter method.
 
-Try to use this function in `main.cpp`
+Try to use this class in `main.cpp`
 
 ### Guidance:
 
-1. Define a template function `Max` that compares two parameters.
-2. The function should be able to compare integers, floats, characters, and any other type that has operator >.
+1. Define a template class `Holder` that encapsulates a single variable.
+2. Implement a constructor, a getter method `getValue()`, and a setter method `setValue()`.
 
 ## Instructions
 1. Set up your C++ development environment if you haven’t already.

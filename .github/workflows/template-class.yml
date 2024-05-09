@@ -1,32 +1,32 @@
-name: template-function
+name: template-class
 
 on:
   pull_request:
     paths:
-      - 'templates/tasks/function/**'
+      - 'templates/tasks/class/**'
     branches:
       - main
 
 jobs:
   test:
     runs-on: ubuntu-latest
-    
+
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
-        
+
       - name: Install CMake
         run: sudo apt-get update && sudo apt-get install -y cmake libgtest-dev
-        
+
       - name: Configure and build
         run: |
-          cd templates/tasks/function
+          cd templates/tasks/class
           cmake -S . -B build
           cmake --build build
-          
+
       - name: Run tests
         run: |
-          cd templates/tasks/function/build
+          cd templates/tasks/class/build
           ./solution_test
 
       - name: Get diff
@@ -34,7 +34,7 @@ jobs:
 
       - name: Fail if solution_test.cpp is modified
         run: |
-          if echo $GIT_DIFF | fgrep 'function/solution_test'; then
+          if echo $GIT_DIFF | fgrep 'class/solution_test'; then
             exit 1
           else
             echo "OK"
