@@ -8,6 +8,8 @@ on:
 jobs:
   check-plagiarism:
     runs-on: ubuntu-latest
+    permissions:
+      issues: write
 
     steps:
     - name: Checkout the base repository
@@ -43,13 +45,16 @@ jobs:
         done
         echo "::set-output name=result::$output"
 
-    - name: Post comment
-      uses: KeisukeYamashita/create-comment@v1
-      with:
-        comment: |
-          **Plagiarism Check Results:**
-          ```
-          ${{ steps.plagiarism_check.outputs.result }}
+    - name: Add comment
+      run: gh issue comment "$NUMBER" --body "$BODY"
+      env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GH_REPO: ${{ github.repository }}
+          NUMBER: ${{ github.event.issue.number }}
+          BODY: >
+            This issue is available for anyone to work on.
+            **Make sure to reference this issue in your pull request.**
+            :sparkles: Thank you for your contribution! :sparkles:
 
     - name: Finalize check
       run: echo "Plagiarism check completed successfully."
