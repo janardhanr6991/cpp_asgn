@@ -43,7 +43,7 @@ jobs:
         output=""
         for file in ${{ env.files }}
         do
-          result=$(python main.py "$file")
+          result=$(python main.py "../$file")
           output+="$file: $result\n"
         done
         echo "::set-output name=result::$output"
