@@ -24,7 +24,7 @@ Read about [address sanitizer](https://saliktariq.medium.com/detect-and-fix-c-me
 
 ## Instructions
 1. Set up your C++ development environment if you haven’t already.
-2. Modify file `include/solution.h` and function in it.
+2. Modify file `solution.h` and function in it.
 3. Modify file `main.cpp`.
 4. Compile and run your program to ensure it works correctly:
 ```shell

@@ -24,7 +24,7 @@ Remember about memory leaks!
 
 ## Instructions
 1. Set up your C++ development environment if you haven’t already.
-2. Modify file `include/solution.h` and function in it.
+2. Modify file `solution.h` and function in it.
 3. Modify `main.cpp`.
 4. Compile and run your program to ensure it works correctly:
 ```shell
