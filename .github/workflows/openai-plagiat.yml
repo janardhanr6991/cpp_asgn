@@ -9,7 +9,7 @@ jobs:
   check-plagiarism:
     runs-on: ubuntu-latest
     permissions:
-      issues: write
+      pull-requests: write
 
     steps:
     - name: Checkout the base repository
@@ -50,8 +50,7 @@ jobs:
       with:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         comment: |
-          Issue title must start with 'ABC-'.
-          Auto-closing this issue.
-
+          Hello
+    
     - name: Finalize check
       run: echo "Plagiarism check completed successfully."
