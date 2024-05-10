@@ -9,7 +9,7 @@ To prepare for this assignment please go through the following tutorials:
 To prepare for this assignment please go through the following tutorials:
 1. Recall `std::vector`
 2. [out_of_range exception](https://www.delftstack.com/howto/cpp/throw-out-of-range-exception-cpp/)
-3. [Memory leaks](https://www.geeksforgeeks.org/what-is-memory-leak-how-can-we-avoid/)
+3. [Memory leaks](https://www.geeksforgeeks.org/memory-leak-in-c-and-how-to-avoid-it/)
 
 # [Assignment 3: Simple Unique Pointer](https://github.com/Gamezar/cpp-training/tree/main/pointers/tasks/simple-unique-ptr)
 
