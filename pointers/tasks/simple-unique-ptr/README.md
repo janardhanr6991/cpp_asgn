@@ -1,7 +1,7 @@
 # Assignment 3: Simple Unique Pointer
 
 ## Objective
-The objective of this assignment is to Understand and implement resource management in C++ by creating a minimalistic version of the `std::unique_ptr`.
+The objective of this assignment is to understand and implement resource management in C++ by creating a minimalistic version of the `std::unique_ptr`.
 
 ## Task
 Develop a class template, SimpleUniquePtr, that mimics the basic functionality of the C++ standard library's std::unique_ptr. The primary goal is to enforce exclusive ownership of dynamically allocated memory through your custom smart pointer class.
