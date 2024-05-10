@@ -1,0 +1,51 @@
+name: simple-unique-ptr
+
+on:
+  pull_request:
+    paths:
+      - 'pointers/tasks/simple-unique-ptr/**'
+    branches:
+      - main
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Install CMake
+        run: sudo apt-get update && sudo apt-get install -y cmake libgtest-dev
+
+      - name: Configure and build
+        run: |
+          cd pointers/tasks/simple-unique-ptr
+          cmake -S . -B build
+          cmake --build build
+
+      - name: Run tests
+        run: |
+          cd pointers/tasks/simple-unique-ptr/build
+          ./solution_test
+
+      - name: Check if standart smart pointers are used
+        run: |
+          cd pointers/tasks/simple-unique-ptr
+          if cat include/solution.h | fgrep -e 'unique_ptr' -e 'shared_ptr'; then
+            echo "smart pointers are not allowed" && exit 1
+          else
+            echo "OK"
+          fi
+
+      - name: Get diff
+        uses: technote-space/get-diff-action@v6
+
+      - name: Fail if solution_test.cpp is modified
+        run: |
+          if echo $GIT_DIFF | fgrep 'simple-unique-ptr/solution_test'; then
+            exit 1
+          else
+            echo "OK"
+          fi
+
