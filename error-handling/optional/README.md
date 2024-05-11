@@ -1,17 +1,17 @@
-# Assignment 1: Error Handling with Exceptions
+# Assignment 2: Error Handling with std::optional
 
 ## Objective
-The objective of this assignment is to discover implement and handle exceptions in a function that calculates the square root of a number.
+The objective of this assignment is to learn to use std::optional for handling errors.
 
 ## Task
-Create a function that throws an exception if it receives a negative number, since the square root of a negative number is not defined in the realm of real numbers.
+Implement a function that attempts to parse an integer from a string. Use std::optional to return the result.
 
 Try to use this function in `main.cpp`
 
 ### Guidance:
 
-1. Define a function double computeSquareRoot(double num) that throws an exception when num is negative.
-2. Catch this exception in the main function and display an appropriate error message.
+1. Define a function std::optional<int> parseInteger(const std::string& str) that attempts to convert str into an integer.
+2. Don't use `std::stoi` or other standart functions for parsing integer. Implement it by yourself and return empty optional in case of error
 
 ## Instructions
 1. Set up your C++ development environment if you haven’t already.
