@@ -15,15 +15,16 @@ To prepare for this assignment please go through the following tutorials:
 
 To prepare for this assignment please go through the following tutorials:
 1. [RAII concept](https://learn.microsoft.com/en-us/cpp/cpp/object-lifetime-and-resource-management-modern-cpp?view=msvc-170)
+2. [Templates](https://github.com/Gamezar/cpp-training/tree/main/templates/tasks)
 
-# [Assignment 4: Polymorphism and Pointers in C+](https://github.com/Gamezar/cpp-training/tree/main/pointers/tasks/zoo)+
+# [Assignment 4: Polymorphism and Pointers in C++](https://github.com/Gamezar/cpp-training/tree/main/pointers/tasks/zoo)
 
 To prepare for this assignment please go through the following tutorials:
 1. [Polymorphism](https://cplusplus.com/doc/tutorial/polymorphism/)
 2. [Thread on polymorphism and smart poiners](https://cplusplus.com/forum/beginner/218300/)
 3. [More on virtual functions](https://www.learncpp.com/cpp-tutorial/virtual-functions/)
 
-# [Assignment 5: Simple Shared Pointer](https://github.com/Gamezar/cpp-training/tree/main/pointers/tasks/simple-shared-ptr)r
+# [Assignment 5: Simple Shared Pointer](https://github.com/Gamezar/cpp-training/tree/main/pointers/tasks/simple-shared-ptr)
 
 To prepare for this assignment please go through the following tutorials:
 1. [std::shared_ptr](https://www.learncpp.com/cpp-tutorial/stdshared_ptr/)
