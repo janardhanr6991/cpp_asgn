@@ -20,7 +20,13 @@ sudo apt-get update && sudo apt-get install -y cmake libgtest-dev
 
 Each of the folders (`basics`, `error-handling` and etc.) contains assignments with resources to prepare for assignment. Find instruction on submitting assignments below.
 
-Study resources carefully and try to do the assignment. Please avoid using such tools as ChatGPT and try to use only google to look up information. These are basics of C++ and it is extremely important to understand everything by yourself..
+Study resources carefully and try to do the assignment. Please avoid using such tools as ChatGPT and try to use only google to look up information. These are basics of C++ and it is extremely important to understand everything by yourself.
+
+Recommended order:
+1. basics
+2. templates
+3. error-handling
+4. pointers
 
 ## Submitting solution to an assignment
 For every assignment:
