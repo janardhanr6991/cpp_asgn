@@ -27,6 +27,7 @@ Recommended order:
 2. templates
 3. error-handling
 4. pointers
+5. future
 
 ## Submitting solution to an assignment
 For every assignment:
