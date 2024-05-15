@@ -15,6 +15,7 @@ TEST(ParseIntegerTests, ReturnsValueForValidInput) {
 TEST(ParseIntegerTests, ReturnsNulloptForInvalidInput) {
     EXPECT_FALSE(parseInteger("abc").has_value());
     EXPECT_FALSE(parseInteger("").has_value());
+    EXPECT_FALSE(parseInteger("-").has_value());
     EXPECT_FALSE(parseInteger("123abc").has_value()) << "Valid number followed by characters should fail";
     EXPECT_FALSE(parseInteger("abc123").has_value()) << "Characters followed by valid number should fail";
     EXPECT_FALSE(parseInteger("123.456").has_value()) << "Non integer number should fail";
