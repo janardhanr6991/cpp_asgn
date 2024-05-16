@@ -64,11 +64,16 @@ TEST_F(SimpleSharedPtrTest, AccessOperations) {
     ASSERT_EQ(40, (*ptr).value);
 }
 
-TEST_F(SimpleSharedPtrTest, DoubleNullprt) {
+TEST_F(SimpleSharedPtrTest, DoubleNullprtOnAssignmentOperator) {
     SimpleSharedPtr<int> a(nullptr);
     SimpleSharedPtr<int> b(nullptr);
 
     a = b;
+}
+
+TEST_F(SimpleSharedPtrTest, DoubleNullprtOnACopyConstructor) {
+    SimpleSharedPtr<int> a(nullptr);
+    SimpleSharedPtr<int> b(a);
 }
 
 int main(int argc, char **argv) {
