@@ -64,6 +64,13 @@ TEST_F(SimpleSharedPtrTest, AccessOperations) {
     ASSERT_EQ(40, (*ptr).value);
 }
 
+TEST_F(SimpleSharedPtrTest, DoubleNullprt) {
+    SimpleSharedPtr<int> a(nullptr);
+    SimpleSharedPtr<int> b(nullptr);
+
+    a = b;
+}
+
 int main(int argc, char **argv) {
     ::testing::InitGoogleTest(&argc, argv);
     return RUN_ALL_TESTS();
