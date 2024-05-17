@@ -7,7 +7,7 @@ The objective of this assignment is to implement a simple timer interface, using
 Create a class `Timer` with following interface:
 
 1. Constructor `Timer(std::chrono::seconds duration)` which will start count for `duration` of seconds
-2. `std::future<void> getTrigger()` will return future that will become available after `duration` of seconds after `Timer` construction. If you call `getTrigger` 2 times it should throw `std::logical_error`
+2. `std::future<void> getTrigger()` will return future that will become available after `duration` of seconds after `Timer` construction. If you call `getTrigger` 2 times it should throw `std::logic_error`
 3. `void tick()` will check if duration of timer has passed. If duration has passed - the future from `getTrigger()` should become available.
 
 Example usage:
