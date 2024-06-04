@@ -13,7 +13,11 @@ int main() {
     std::unique_ptr<Polygon> poly;
     if (n == 1) { // Provide a support for creating RightTriangle as well
         poly = std::make_unique<Rectangle>(a, b);
-    } else {
+    }
+    else if(n==2){
+        poly = std::make_unique<RightTriangle>(a, b);
+    }
+     else {
         std::cerr << "Invalid choice\n";
         return 1;
     }
